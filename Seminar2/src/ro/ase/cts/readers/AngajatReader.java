@@ -9,9 +9,17 @@ import java.util.Scanner;
 import ro.ase.cts.classes.Angajat;
 import ro.ase.cts.classes.Aplicant;
 
-public abstract class AngajatReader extends AplicantReader {
-	public List<Aplicant> readAplicants(String file) throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(file));
+public class AngajatReader extends AplicantReader {
+	
+	
+	
+	public AngajatReader(String nume) {
+		super(nume);
+		// TODO Auto-generated constructor stub
+	}
+
+	public List<Aplicant> readAplicants() throws FileNotFoundException, NumberFormatException {
+		Scanner input2 = new Scanner(new File(super.numeFisier));
 		input2.useDelimiter(",");
 		List<Aplicant> angajati = new ArrayList<Aplicant>();
 
@@ -32,5 +40,6 @@ public abstract class AngajatReader extends AplicantReader {
 		input2.close();
 		return angajati;
 	}
+	
 
 }

@@ -6,5 +6,10 @@ import java.util.List;
 import ro.ase.cts.classes.Aplicant;
 
 public abstract class AplicantReader {
-	public abstract List<Aplicant> readAplicants(String file) throws FileNotFoundException, NumberFormatException;	
+	protected String numeFisier;
+	public abstract List<Aplicant> readAplicants() throws FileNotFoundException, NumberFormatException;
+	
+	public AplicantReader(String numeFisier) {
+		this.numeFisier = numeFisier;
+	}
 }

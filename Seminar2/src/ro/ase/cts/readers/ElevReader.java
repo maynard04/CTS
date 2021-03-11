@@ -10,8 +10,13 @@ import ro.ase.cts.classes.Aplicant;
 import ro.ase.cts.classes.Elev;
 
 public abstract class ElevReader extends AplicantReader {
-	public List<Aplicant> readPupil(String file) throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(file));
+	public ElevReader(String nume) {
+		super(nume);
+		// TODO Auto-generated constructor stub
+	}
+
+	public List<Aplicant> readPupil() throws FileNotFoundException {
+		Scanner input2 = new Scanner(super.numeFisier);
 		input2.useDelimiter(",|\n");
 		List<Aplicant> elevi = new ArrayList<Aplicant>();
 

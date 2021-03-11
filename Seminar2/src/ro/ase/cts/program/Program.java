@@ -9,15 +9,15 @@ import ro.ase.cts.readers.StudentReader;
 
 public class Program {
 	
-	public static List<Aplicant> readAplicant(String fisier, AplicantReader reader) throws NumberFormatException, FileNotFoundException {
-		return reader.readAplicants(fisier);
+	public static List<Aplicant> readAplicant(AplicantReader reader) throws NumberFormatException, FileNotFoundException {
+		return reader.readAplicants();
 	}
 
 	public static void main(String[] args) {
-		List<Aplicant> listaAngajati;
+		List<Aplicant> listaAplicant;
 		try {
-			listaAngajati = readAplicant("studenti.txt", new AplicantReader());
-			for(Aplicant aplicant:listaAngajati)
+			listaAplicant = readAplicant(new AngajatReader("angajati.txt"));
+			for(Aplicant aplicant:listaAplicant)
 				System.out.println(aplicant.toString());
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
